@@ -1,0 +1,8 @@
+{
+  "name": "Gemini Vision Theremin",
+  "description": "A touchless theremin powered by webcam hand tracking and Gemini AI for sound design.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
