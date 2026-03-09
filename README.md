@@ -1,22 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Gemini Vision Theremin
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1ebI4GFIYEUERWt_4v8h6bXzms-fx5X71
+A web-based Theremin that uses your webcam to detect hand movements and maps them to frequency and volume using the WebAudio API. It also features an AI preset generator powered by Gemini! 
 
 **Deployed Version:** [https://theremin.roytown.net/](https://theremin.roytown.net/)
 
+## Features
+
+- **Webcam Hand Tracking**: Uses MediaPipe to detect your hands in real-time.
+- **WebAudio Synthesizer**: Maps hand position to pitch and volume.
+- **AI Presets**: Describe a sound you want (e.g., "spooky 80s sci-fi") and Gemini will generate a custom synthesizer preset for you.
+
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set the `GEMINI_API_KEY` in `.env.local` to your Google Gemini API key:
+   ```env
+   GEMINI_API_KEY=your_api_key_here
+   ```
+4. Run the app:
+   ```bash
+   npm run dev
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Tech Stack
+
+- React + TypeScript
+- Vite
+- Google AI JavaScript SDK (`@google/genai`)
+- MediaPipe Vision Tasks
+- Tailwind CSS
+
+## Concept
+
+Webcam detects hands -> Maps to Frequency/Volume -> WebAudio Oscillator. Add Gemini to generate the initial Synth configuration.
